@@ -1,0 +1,94 @@
+﻿@model List<IssueModel>
+	<div id="colorlib-page">
+		<div id="colorlib-main">
+			<section class="ftco-section ftco-no-pt ftco-no-pb">
+	    	<div class="container">
+	    		<div class="row d-flex">
+	    			<div class="col-xl-8 py-5 px-md-5">
+	    				<div class="row pt-md-4">
+							@foreach(var issue in Model){
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href="" class="img img-2" style="background-image: url(/images/svglogo.svg);"></a>
+										<div class="text text-2 pl-md-4">
+				              <h3 class="mb-2"><a href="">@issue.Text</a></h3>
+				              <div class="meta-wrap">
+												<p class="meta">
+				              		<span><i class="icon-calendar mr-2"></i>Sayı: @issue.Issue, @issue.Date</span>
+				              	</p>
+			              	</div>
+				              <p><a href="~/files/@issue.Date.Replace(".","_")-@issue.Issue-@issue.Text-.pdf" target="_blank" class="btn-custom">İndir <span class="ion-ios-arrow-forward"></span></a></p>
+				            </div>
+									</div>
+								</div>
+							}
+			    		</div>
+						@if(Model.Count > 10){
+							<div class="row">
+								<div class="col">
+									<div class="block-27">
+										<ul>
+											<li><a href="#">&lt;</a></li>
+											<li class="active"><span>1</span></li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li><a href="#">4</a></li>
+											<li><a href="#">5</a></li>
+											<li><a href="#">&gt;</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						}
+			    		
+			    	</div>
+	    			<div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
+						<div class="sidebar-box pt-md-4">
+							<form action="#" class="search-form">
+								<div class="form-group">
+									<span class="icon icon-search"></span>
+									<input type="text" class="form-control" placeholder="Sayı Ara">
+								</div>
+							</form>
+						</div>
+	            <div class="sidebar-box ftco-animate">
+	              <h3 class="sidebar-heading">Son Sayılar</h3>
+	              @foreach(var file in ViewBag.last3){
+								<div class="block-21 mb-4 d-flex">
+									<a class="blog-img mr-4" style="background-image: url(/images/svglogo.svg);"></a>
+									<div class="text">
+										<h3 class="heading"><a href="/Home/DownloadFile?text=@file.Text&issue=@file.Issue&date=@file.Date">@file.Text</a></h3>
+										<div class="meta">
+											<div><a href="#"><span class="icon-calendar"></span> Sayı: @file.Issue, @file.Date</a></div>
+										</div>
+									</div>
+								</div>
+							}
+	            @*<div class="sidebar-box ftco-animate">
+	            	<h3 class="sidebar-heading">Bu Yılki Sayılar</h3>
+	              <ul class="categories">
+	              	<li><a href="#">Aralık 2022 <span></span></a></li>
+	                <li><a href="#">Kasım 2022 <span></span></a></li>
+	                <li><a href="#">Ekim 2022 <span></span></a></li>
+	                <li><a href="#">Eylül 2022 <span></span></a></li>
+	                <li><a href="#">Ağustos 2022<span></span></a></li>
+	                <li><a href="#">Temmuz 2022 <span></span></a></li>
+					<li><a href="#">Haziran 2022 <span></span></a></li>
+					<li><a href="#">Mayıs 2022 <span></span></a></li>
+					<li><a href="#">Nisan 2022 <span></span></a></li>
+					<li><a href="#">Mart 2022 <span></span></a></li>
+	              </ul>
+	            </div>*@
+	            
+	          </div>
+	    		</div>
+	    	</div>
+			</div>
+	    </section>
+		</div>
+	</div>
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  
+    

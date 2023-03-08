@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"/>
+    <style>
+        h1{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container pt-4">
+        <h1>Sayı Ekle</h1>
+    </div>
+    <br />
+    <div class="container">
+        <form action="/Admin/Index" method="post" enctype="multipart/form-data">
+            <input type="text" class="form-control" placeholder="Açıklama" name="text">
+
+            <br />
+
+            <input type="number" class="form-control" placeholder="Sayı" name="sayi">
+
+            <br />
+
+            <input type="text" class="form-control" placeholder="Tarih (ay_yıl)" name="tarih">
+
+            <br />
+
+            <div class="form-group">
+                <label for="contohupload1">Dosya</label>
+                <input type="file" class="form-control-file" id="contohupload1" name="file" accept="application/pdf">
+            </div>
+            <button type="submit" class="btn btn-success">Ekle</button>
+            <a href="/Login/Logout" class="btn btn-primary">Çıkış</a>
+        </form>       
+    </div>
+</body>
